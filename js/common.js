@@ -7,7 +7,7 @@ Vue.component('header-component', {
 <header class="header" :class="{ 'open': isNavOpen }">
 <div class="container">
 <h1 class="header-logo">
-<a href="index.html"><img src="/images/logo_gray.svg" alt="Mie Togo Portfolio" class="logo"></a>
+<a href="index.html"><img src="./images/logo_gray.svg" alt="Mie Togo Portfolio" class="logo"></a>
 </h1>
 <nav class="nav">
 <ul class="nav-list">
@@ -57,7 +57,7 @@ Vue.component('item-card', {
     <div class="works-list">
     <a href="#" class="works-item" v-for="item in items" :key="item.id" @click.prevent="openModal(item)">
         <div class="works-img">
-            <img :src="'images/' + item.img" :alt="item.title">
+            <img :src="'./images/' + item.img" :alt="item.title">
         </div>
         <div class="works-body">
             <p>{{ item.title }}</p>
@@ -75,7 +75,7 @@ Vue.component('item-card', {
         <div class="works-modal__inner" v-if="selectedItem">
             <button type="button" class="works-modal__close" aria-label="Close" @click="closeModal">✕</button>
             <div class="works-img">
-                <img :src="'images/' + selectedItem.img" :alt="selectedItem.title">
+                <img :src="'./images/' + selectedItem.img" :alt="selectedItem.title">
             </div>
             <div class="works-modal__content">
                 <h2 class="works-modal__title">{{ selectedItem.title }}</h2>  
