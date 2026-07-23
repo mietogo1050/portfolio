@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | 糸島の海辺から届けるWEB制作</title>
+    <style>
+        /* --- John Lemonを参考にしたカラー＆ベース設定 --- */
+        :root {
+            --bg-color: #fcfbfa;       /* 温かみのあるオフホワイト（生成り） */
+            --text-main: #333231;      /* 真っ黒ではない、炭のような優しい黒 */
+            --text-sub: #706e6b;       /* 柔らかなグレー */
+            --accent: #2e6f7a;         /* 糸島の深みのある海をイメージしたシーブルー */
+            --accent-light: #e6eff0;   /* 浅瀬のような透明感のある薄いブルー */
+            --card-bg: #ffffff;        /* カードはすっきり白 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s, opacity 0.3s;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* 糸島の穏やかな波をイメージした、細く控えめな区切り線 */
+        section + section {
+            border-top: 1px dashed #e0deda;
+        }
+
+        /* タイトルは飾り立てずシンプルに */
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--accent);
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background-color: rgba(252, 251, 250, 0.9);
+            backdrop-filter: blur(4px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin-left: 24px;
+        }
+        nav a {
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        /* --- ヒーロービュー（メッセージ中心） --- */
+        .hero {
+            padding: 180px 0 100px 0;
+            text-align: center;
+        }
+        .hero-illustration {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+        .hero p {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- プロフィール --- */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+        .profile-image-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        /* 画像の周りにほんのり波のようなニュアンスを付けるための装飾 */
+        .profile-image-wrapper::after {
+            content: "";
+            position: absolute;
+            top: -6px; left: -6px; right: -6px; bottom: -6px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        .profile-text h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        /* --- スキル --- */
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+        }
+        .skill-category {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #ebd9cb; /* ほんのりクラフト感のある薄いベージュの線 */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .skill-category h3 {
+            margin: 0 0 16px 0;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skill-category li {
+            margin-bottom: 10px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* --- 作品（カードデザイン） --- */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 40px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.03);
+            border: 1px solid #ebd9cb;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(46, 111, 122, 0.08);
+        }
+        .card-img {
+            width: 100%;
+            height: 220px;
+            background: #f0ede9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+        }
+        .card-content {
+            padding: 28px;
+        }
+        .card-title {
+            margin: 0 0 12px 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .card-tags {
+            margin-bottom: 16px;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+        }
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 24px;
+        }
+        .card-links a {
+            margin-right: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* --- 問い合わせフォーム --- */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 28px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--card-bg);
+            border: 1px solid #ebd9cb;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #204f57;
+        }
+        .sns-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* --- フッター --- */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            border-top: 1px solid #ebd9cb;
+            background-color: #f5f3ef;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">Your Name.dev</div>
+            <nav>
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- ヒーロービュー -->
+        <section class="hero">
+            <!-- 糸島の海とレモン、解決のひらめきをイメージした絵文字イラスト -->
+            <div class="hero-illustration">🌊🍋💡</div>
+            <h1>WEBの力で、あなたの課題を解決する手助けを。</h1>
+            <p>海が見える糸島の穏やかな環境から、デザインの意図を汲み取った丁寧なコーディングと、課題を解決するための最適なフロントエンド実装をお届けします。</p>
+        </section>
+
+        <!-- 自己紹介 -->
+        <section id="profile">
+            <h2>Profile</h2>
+            <div class="profile-container">
+                <div class="profile-image-wrapper">
+                    <!-- ご自身の写真やアバター画像に差し替えてください -->
+                    <img src="your-photo.jpg" alt="プロフィール画像" class="profile-image">
+                </div>
+                <div class="profile-text">
+                    <h3>糸島在住のフロントエンドエンジニア</h3>
+                    <p>
+                        福岡県の自然豊かな糸島市に拠点を置き、日々海の音を感じながらコードを書いています。
+                        私にとってコーディングは、ただデザインを形にするだけでなく、「Webサイトを訪れる人の使いやすさ」や「クライアントの抱えるビジネスの課題」を解決するための手段です。
+                        セマンティックなマークアップ、表示速度の高速化、丁寧なコミュニケーションで、Webを通じた最高の解決策を一緒に作り上げます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- スキル -->
+        <section id="skill">
+            <h2>Skill</h2>
+            <div class="skill-list">
+                <div class="skill-category">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Languages & Markup</h3>
+                    <ul>
+                        <li>HTML5 / CSS3 (Sass)</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>TypeScript</li>
+                        <li>セマンティックマークアップ</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frameworks</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Tools & Others</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Figma / Adobe XD</li>
+                        <li>Lighthouse 高速化対応</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品 -->
+        <section id="works">
+            <h2>Works</h2>
+            <div class="works-grid">
+                <div class="card">
+                    <div class="card-img">制作物のスクリーンショット</div>
+                    <div class="card-content">
+                        <h3 class="card-title">地域ブランド 注文サイト</h3>
+                        <div class="card-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">TypeScript</span>
+                        </div>
+                        <p class="card-desc">「カゴ落ちを減らしたい」という課題に対し、Next.jsの高速表示と直感的なUIで離脱率の改善に貢献しました。</p>
+                        <div class="card-links">
+                            <a href="#" target="_blank">View Site →</a>
+                            <a href="#" target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">制作物のスクリーンショット</div>
+                    <div class="card-content">
+                        <h3 class="card-title">コーポレートサイト リニューアル</h3>
+                        <div class="card-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p class="card-desc">適切なタグ設計（SEO対策）とアクセシビリティ対応を行い、検索順位の向上と誰でも見やすいサイト設計を重視しました。</p>
+                        <div class="card-links">
+                            <a href="#" target="_blank">View Site →</a>
+                            <a href="#" target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 連絡先 -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="お名前" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="メールアドレス" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="解決したい課題や、制作のご相談などお気軽にご記入ください" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">メッセージを送信する</button>
+            </form>
+            <div class="sns-links">
+                <a href="#" target="_blank">Instagram →</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 Your Name. Crafted with care in Itoshima.</p>
+    </footer>
+
+</body>
+</html>

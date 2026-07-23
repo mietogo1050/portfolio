@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 30" width="160" height="30">
+  <defs>
+    <!-- サイトのフォントファミリーと指定のカラーコード（#2e6f7a）を設定 -->
+    <style>
+      .logo-text {
+        font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        fill: #2e6f7a;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </defs>
+  <!-- ロゴテキストの描画 -->
+  <text x="5" y="22" class="logo-text">MIE TOGO</text>
+</svg>

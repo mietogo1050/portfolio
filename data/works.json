@@ -1,0 +1,55 @@
+{
+"status": 200,
+"message": null,
+"works": [
+{
+"id": 1,
+"title": "おみくじアプリ",
+"date": "2026-06-15",
+"category": "Vue.js",
+"url": "https://mietogo1050.github.io/omikuji.app/",
+"github": "https://github.com/mietogo1050/omikuji.app.git",
+"description": "Vue.jsで実装したおみくじアプリ。v-ifディレクティブを使い、結果の表示/非表示を切り替えています。",
+"img": "works_02.png"
+},
+{
+"id": 2,
+"title": "ストレス診断アプリ",
+"date": "2026-06-17",
+"category": "Vue.js",
+"url": "https://mietogo1050.github.io/stresscheck.app/",
+"github": "https://github.com/mietogo1050/stresscheck.app.git",
+"description": "「はい」「いいえ」の2択の質問に回答し、合計ポイントによってストレス度を判定する診断コンテンツです。設問の切り替えには、トランジションを使用し、簡単なアニメーションをつけています。",
+"img": "works_01.png"
+},
+{
+"id": 3,
+"title": "WCBカフェ ホームページ",
+"date": "2026-06-25",
+"category": ["Vue.js", "HTML5", "CSS3"],
+"url": "https://mietogo1050.github.io/WCBCafe_vue2/",
+"github": "https://github.com/mietogo1050/WCBCafe_vue2.git",
+"description": "架空のカフェ、WCBカフェのホームページ。TOPページ、ニュースページ、メニューページ、お問い合わせの4ページで構成。HTML/CSSでコーディングしたのち、Vue.jsでコンポーネント化しました。",
+"img": "works_03.png"
+},
+{
+"id": 4,
+"title": "BMI診断アプリ",
+"date": "2026-05-29",
+"category": "JavaScript",
+"url": "https://mietogo1050.github.io/bmi_app/",
+"github": "https://github.com/mietogo1050/bmi_app.git",
+"description": "入力された身長、体重の数値をもとにBMIを算出するシンプルなアプリ。LocalStrageに算出履歴を残します。BMI値を計算する関数、肥満度を判定する関数、履歴一覧を描画する関数をJava.Scriptでリファクタリングしました",
+"img": "works_04.png"
+},
+{
+"id": 5,
+"title": "今日のわんこ",
+"date": "2026-06-08",
+"category":"JavaScript",
+"url": "https://mietogo1050.github.io/dog_api/",
+"github": "https://github.com/mietogo1050/dog_api.git",
+"description": "サーバーやデータベースから必要な情報を取得するフェッチを使った癒し系犬アプリです。ボタンを押すとランダムに犬の画像を表示。犬種でのフィルターも可能なので好きな犬種を際限なく見ていられる癒し系アプリです",
+"img": "works_05.png"
+}
+]}

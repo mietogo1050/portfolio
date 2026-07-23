@@ -1,0 +1,37 @@
+[
+{
+"title": "Home",
+"path": "#",
+"area": "header"
+},
+{
+"title": "About",
+"path": "#about",
+"area": "header"
+},
+{
+"title": "Profile",
+"path": "#profile",
+"area": "header"
+},
+{
+"title": "Motto",
+"path": "#motto",
+"area": "header"
+},
+{
+"title": "Works",
+"path": "#works",
+"area": "header"
+},
+{
+"title": "Skill",
+"path": "#skill",
+"area": "header"
+},
+{
+"title": "Contact",
+"path": "#contact",
+"area": "header"
+}
+]
