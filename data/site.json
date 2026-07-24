@@ -5,11 +5,6 @@
 "area": "header"
 },
 {
-"title": "About",
-"path": "#about",
-"area": "header"
-},
-{
 "title": "Profile",
 "path": "#profile",
 "area": "header"
