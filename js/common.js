@@ -41,8 +41,7 @@ Vue.component('item-card', {
             this.selectedItem = item;
             this.isModalOpen = true;
             this.$nextTick(() => {
-                // ブラウザ標準の <dialog> を表示
-                this.$refs.dialog.showModal();
+            this.$refs.dialog.showModal();
             });
         },
         closeModal() {
@@ -71,7 +70,7 @@ Vue.component('item-card', {
                 </ul>
         </div>
     </a>
-  <dialog class="works-modal" ref="dialog">
+    <dialog class="works-modal" ref="dialog">
         <div class="works-modal__inner" v-if="selectedItem">
             <button type="button" class="works-modal__close" aria-label="Close" @click="closeModal">✕</button>
             <div class="works-img">
@@ -147,7 +146,6 @@ new Vue({
         },
         sortedItemList() {
             return [...this.itemList].sort((a, b) => {
-            // 日付を比較して新しい順（降順）にする
             return new Date(b.date) - new Date(a.date);
             });
         },
