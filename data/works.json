@@ -13,6 +13,16 @@
 "img": "works_01.png"
 },
 {
+"id": 7,
+"title": "オンライングリーティングカード_母の日",
+"date": "2026-07-27",
+"category":"Vue.js",
+"url": "https://mietogo1050.github.io/app_greetingcard/",
+"github": "https://github.com/mietogo1050/app_greetingcard.git",
+"description": "オンラインで手軽に送ることができるグリーティングカード。母の日verではカーネーションの花束を10本集めるとメッセージカードが表示されます。JavaScriptを使用。花束の画像はCanvaで作成しました。",
+"img": "works_07.png"
+},
+{
 "id": 2,
 "title": "おみくじアプリ",
 "date": "2026-06-15",
@@ -49,7 +59,7 @@
 "category": "JavaScript",
 "url": "https://mietogo1050.github.io/bmi_app/",
 "github": "https://github.com/mietogo1050/bmi_app.git",
-"description": "入力された身長、体重の数値をもとにBMIを算出するシンプルなアプリ。LocalStrageに算出履歴を残します。BMI値を計算する関数、肥満度を判定する関数、履歴一覧を描画する関数をJava.Scriptでリファクタリングしました",
+"description": "入力された身長、体重の数値をもとにBMIを算出するシンプルなアプリ。LocalStorageに算出履歴を残します。BMI値を計算する関数、肥満度を判定する関数、履歴一覧を描画する関数をJava.Scriptでリファクタリングしました",
 "img": "works_05.png"
 },
 {
@@ -61,5 +71,15 @@
 "github": "https://github.com/mietogo1050/dog_api.git",
 "description": "サーバーやデータベースから必要な情報を取得するフェッチを使った癒し系犬アプリです。ボタンを押すとランダムに犬の画像を表示。犬種でのフィルターも可能なので好きな犬種を際限なく見ていられる癒し系アプリです",
 "img": "works_06.png"
+},
+{
+"id": 7,
+"title": "オンライングリーティングカード_母の日",
+"date": "2026-07-27",
+"category":"Vue.js",
+"url": "https://mietogo1050.github.io/app_greetingcard/",
+"github": "https://github.com/mietogo1050/app_greetingcard.git",
+"description": "オンラインで手軽に送ることができるグリーティングカード。母の日verではカーネーションの花束を10本集めるとメッセージカードが表示されます。JavaScriptを使用。花束の画像はCanvaで作成しました。",
+"img": "works_07.png"
 }
 ]}
