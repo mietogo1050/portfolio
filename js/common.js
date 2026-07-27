@@ -53,14 +53,6 @@ Vue.component('item-card', {
             return Array.isArray(cat) ? cat.join(', ') : cat;
         },
     },
-    computer:{
-        sortedItemList() {
-            return [...this.itemList].sort((a, b) => {
-                        // 日付を比較して新しい順（降順）にする
-                        return new Date(b.date) - new Date(a.date);
-                    });
-    },
-    },
     template: `
     <div class="works-list">
     <a href="#" class="works-item" v-for="item in items" :key="item.id" @click.prevent="openModal(item)">
@@ -154,6 +146,12 @@ new Vue({
     computed: {
         headerMenu() {
             return this.site;
-        }
+        },
+        sortedItemList() {
+            return [...this.itemList].sort((a, b) => {
+            // 日付を比較して新しい順（降順）にする
+            return new Date(b.date) - new Date(a.date);
+            });
+        },
     },
 });
