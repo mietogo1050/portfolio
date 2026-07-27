@@ -45,14 +45,6 @@ img {
     border-style: none;
 }
 
-.pc-only {
-    display: block;
-}
-
-.sp-only {
-    display: none;
-}
-
 body:has(.header.open) {
     overflow-y: hidden;
 }
