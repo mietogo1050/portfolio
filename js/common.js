@@ -103,8 +103,6 @@ new Vue({
             isNavOpen: false,
             site: [],
             itemList: [],
-            selectedItem: null,
-            isModalOpen: false,
         }
     },
     methods: {

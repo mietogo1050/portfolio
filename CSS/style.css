@@ -138,7 +138,7 @@ body:has(.header.open) {
 
 .nav-item {
     width: 100%;
-    text-align: center;     /* 文字を中央寄せ */
+    text-align: center; 
 }
 
 .nav-item:last-child {
@@ -179,16 +179,14 @@ body:has(.header.open) {
     padding: 0 20px;
 }
 
-/* Works用：カルーセル（横並び）スタイル */
 .works-list {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;            /* はみ出たら横スクロール */
-    gap: 20px;                   /* カード間の余白 */
-    width: 100%;                 /* 親の幅いっぱいに広げる */
-}
+    overflow-x: auto; 
+    gap: 20px;   
+    width: 100%;
+}          
 
-/* カード1枚ずつの設定 */
 .works-item {
     flex: 0 0 300px; 
     display: block; 
@@ -197,26 +195,22 @@ body:has(.header.open) {
 .works-img img {
     width: 100%;
     object-fit: contain;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 8px;
 }
-
 .works-body {
-    padding: 20px; /* カード内の余白を追加 */
+    padding: 20px;
 }
 
 .works-body p {
     color: var(--text-main);
 }
 
-/* --- モーダル全体の装飾 --- */
-
 .works-modal {
-    display: none; /* 初期状態は非表示 */
+    display: none;
 }
 
 .works-modal[open] {
-    display: block; /* 開いたときだけ表示 */
+    display: block; 
 }
 
 .works-modal {
@@ -256,22 +250,20 @@ body:has(.header.open) {
     color: #ffffff;
 }
 
-
 .works-modal__main-content {
     display: flex;
-    gap: 30px; /* リストと説明文の間の余白 */
+    gap: 30px;
     align-items: flex-start;
 }
 
-/* それぞれの幅を調整 */
 .works-modal__meta-list {
-    flex: 0 0 200px; /* リストの幅を固定（お好みで調整） */
+    flex: 0 0 200px; 
     list-style: none;
     padding: 0;
 }
 
 .works-modal__description {
-    flex: 1; /* 残りのスペースを説明文が使う */
+    flex: 1; 
 }
 
 .works-modal__link {
@@ -284,7 +276,6 @@ body:has(.header.open) {
     text-align: left;
 }
 
-/* コンテンツエリア：Grid設定 */
 .works-modal__inner {
     padding: 50px;
     display: grid;
@@ -301,12 +292,8 @@ body:has(.header.open) {
     margin-bottom: 20px;
     font-weight: bold;
 }
-/* 画像サイズを制限 */
-.works-img img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
+
+
 
 /* タグ */
 .tech-tag {
@@ -319,17 +306,7 @@ body:has(.header.open) {
     display: inline-block;
 }
 
-/* タグの装飾を統一 */
-.tech-tag {
-    background-color: var(--accent-light);
-    color: var(--accent); /* 海ブルー */
-    padding: 4px 12px;
-    border-radius: 20px; 
-    font-size: 13px;
-    margin-right: 8px;
-    display: inline-block;
-}
-
+/* タグ */
 
 .tech-list {
     display: flex;
@@ -341,7 +318,7 @@ body:has(.header.open) {
 }
 
 .tech-tag {
-    background-color: #f0f0f0;
+    background-color: var(--accent-light);
     padding: 2px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -375,7 +352,6 @@ body:has(.header.open) {
 
 .skill-name {
     font-size: 18px;
-    /* font-weight: bold; */
     margin-bottom: 12px;
     color: var(--accent);
 }
@@ -422,7 +398,7 @@ body:has(.header.open) {
     border-radius: 8px;
 }
 
-.motto-img {
+.motto-img {    
 width: 100%;
     max-width: 400px; 
     height: 180px; 
@@ -493,12 +469,7 @@ width: 100%;
     text-align: left;
 }
 
-/* Contact / Footer */
-.contact {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
+/* フッター */
 
 .footer {
     padding: 30px;
@@ -544,12 +515,12 @@ width: 100%;
 }
 
 .thanks-container {
-    text-align: center; /* 全体を中央寄せ */
+    text-align: center;
     padding: 50px 20px;
 }
 
 .thanks-img img {
-    max-width: 400px; /* 画像の最大サイズを制限 */
+    max-width: 400px; 
     margin-bottom: 20px;
 }
 
@@ -562,15 +533,6 @@ width: 100%;
     body {
         font-size: 14px;
     }
-
-    .pc-only {
-        display: none;
-    }
-
-    .sp-only {
-        display: block;
-    }
-
     .title {
         font-size: 26px;
         margin-bottom: 20px;
@@ -687,9 +649,9 @@ width: 100%;
         padding-top: 80px;
     }
     .nav-list {
-    flex-direction: column; /* 縦並びに指定 */
+    flex-direction: column; 
     }
-/* ハンバーガーボタン全体の設定 */
+/* ハンバーガーボタン */
     .hamburger {
         width: 48px;
         height: 48px;
@@ -701,22 +663,20 @@ width: 100%;
         border: none;
         cursor: pointer;
         padding: 0;
-        position: relative; /* 子要素の基準にする */
+        position: relative;
     }
 
-    /* 線の共通スタイル */
     .hamburger .line {
         position: relative;
         display: block;
-        width: 30px;      /* 線の長さ */
-        height: 1px;      /* 線の太さ */
-        background: var(--text-main); /* 線の色（ロゴの色などに合わせて調整してください） */
-        margin: 4px 0;    /* 線の間隔 */
+        width: 30px;   
+        height: 1px;    
+        background: var(--text-main);
+        margin: 4px 0; 
         transition: all 0.3s ease;
         border-radius: 2px;
     }
 
-    /* is-activeになった時のアニメーション用 */
     .hamburger.is-active .line1 {
         transform: translateY(9px) rotate(45deg);
     }
